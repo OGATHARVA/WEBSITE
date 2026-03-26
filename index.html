@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Atharva Bhosle – Electronics & Computer Engineering student. Anime-themed personal portfolio."/>
+  <title>Atharva Bhosle | Portfolio ⚓</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@300;400;500;600;700;900&family=Outfit:wght@300;400;600;700;900&family=Permanent+Marker&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ===== LOADER ===== -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">⚓</div>
+      <div class="loader-tagline">Setting Sail…</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-text">I'm going to be King of the Pirates!</p>
+    </div>
+  </div>
+
+  <!-- ===== CANVAS ===== -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-anchor">⚓</span>
+      <span class="logo-text">AB</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"      class="nav-link" data-section="home">Home</a></li>
+      <li><a href="#about"     class="nav-link" data-section="about">About</a></li>
+      <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+      <li><a href="#anime"     class="nav-link" data-section="anime">Anime</a></li>
+      <li><a href="#skills"    class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#contact"   class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <!-- OP wave decoration -->
+    <div class="hero-ocean">
+      <svg class="wave wave1" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C360,120 1080,0 1440,64 L1440,120 L0,120 Z"/></svg>
+      <svg class="wave wave2" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,80 C400,20 1040,100 1440,40 L1440,120 L0,120 Z"/></svg>
+    </div>
+    <div class="hero-bg-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+
+    <!-- Left content -->
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-icon">🏴‍☠️</span> Nakama of the Grand Line
+      </div>
+      <h1 class="hero-name reveal-up delay-1">
+        <span class="name-greeting">Hi, I'm</span>
+        <span class="name-main op-gradient">Atharva</span>
+        <span class="name-last">Bhosle</span>
+      </h1>
+      <p class="hero-subtitle reveal-up delay-2">
+        <span id="typedText"></span><span class="type-cursor">|</span>
+      </p>
+      <p class="hero-desc reveal-up delay-3">
+        Electronics &amp; Computer Engineering student at <strong>Vidyalankar Polytechnic College</strong> — sailing the seas of technology, innovation &amp; adventure.
+      </p>
+      <div class="hero-quote reveal-up delay-3">
+        <span class="quote-symbol">"</span>
+        I'm going to be King of the Pirates!
+        <span class="quote-attr">— Monkey D. Luffy</span>
+      </div>
+      <div class="hero-cta reveal-up delay-4">
+        <a href="#contact" class="btn btn-primary">
+          <span>Set Sail!</span>
+          <i class="fa-solid fa-anchor"></i>
+        </a>
+        <a href="#anime" class="btn btn-outline">
+          <span>My Anime</span>
+          <i class="fa-solid fa-star"></i>
+        </a>
+      </div>
+      <div class="hero-socials reveal-up delay-5">
+        <a href="https://in.linkedin.com/in/atharva-bhosle-b17784359" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/ath_rv008/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right – Luffy image -->
+    <div class="hero-visual reveal-right delay-2">
+      <div class="hero-img-frame">
+        <img src="img_onepiece.png" alt="Monkey D. Luffy – One Piece" class="hero-anime-img"/>
+        <div class="img-glow"></div>
+        <div class="img-badge ib1">👒 Straw Hat Crew</div>
+        <div class="img-badge ib2">⚡ Gear 5</div>
+        <div class="devil-fruit-orb"></div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-header reveal-up">
+        <span class="section-tag">⚓ Who I Am</span>
+        <h2 class="section-title">About <span class="op-gradient">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-card glass reveal-left">
+          <div class="about-icon-wrap"><i class="fa-solid fa-user-astronaut about-icon"></i></div>
+          <h3>Who Am I?</h3>
+          <p>I'm <strong>Atharva Bhosle</strong>, a 2nd-year student pursuing <strong>Electronics &amp; Computer Engineering</strong> at Vidyalankar Polytechnic College, Mumbai. Driven by curiosity, technology &amp; the spirit of adventure — just like Luffy sailing the Grand Line!</p>
+        </div>
+        <div class="about-card glass reveal-up delay-1">
+          <div class="about-icon-wrap"><i class="fa-solid fa-bullseye about-icon"></i></div>
+          <h3>My Power</h3>
+          <p>Like unlocking a Devil Fruit, I bridge hardware and software — <strong>electronics</strong> to <strong>computer engineering</strong>. From circuit design to software development, I embrace the full power of technology.</p>
+        </div>
+        <div class="about-card glass reveal-right delay-2">
+          <div class="about-icon-wrap"><i class="fa-solid fa-crown about-icon"></i></div>
+          <h3>My Dream</h3>
+          <p>Like Luffy dreams of becoming King of the Pirates, I dream of becoming a world-class engineer — building things that leave a lasting impact and inspire others to dream bigger.</p>
+        </div>
+      </div>
+      <div class="stats-row reveal-up delay-3">
+        <div class="stat-item">
+          <span class="stat-num" data-target="2">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years Sailing</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="10">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="5">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="3">0</span><span class="stat-suffix"></span>
+          <span class="stat-label">Fav Anime</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="section section-dark" id="education">
+    <div class="section-inner">
+      <div class="section-header reveal-up">
+        <span class="section-tag">📚 My Journey</span>
+        <h2 class="section-title">My <span class="op-gradient">Education</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"><i class="fa-solid fa-building-columns"></i></div>
+          <div class="timeline-card glass">
+            <div class="timeline-header">
+              <span class="timeline-badge current">⚡ Current Arc</span>
+              <span class="timeline-year">2023 – Present</span>
+            </div>
+            <h3 class="timeline-title">Diploma in Electronics &amp; Computer Engineering</h3>
+            <p class="timeline-institution"><i class="fa-solid fa-location-dot"></i> Vidyalankar Polytechnic College, Mumbai</p>
+            <p class="timeline-desc">Currently in my <strong>2nd year</strong>, mastering a curriculum that covers digital electronics, microprocessors, programming, networking, and embedded systems — leveling up like a Shonen protagonist!</p>
+            <div class="timeline-tags">
+              <span class="tag">Electronics</span>
+              <span class="tag">Computer Engineering</span>
+              <span class="tag">2nd Year</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal-right delay-1">
+          <div class="timeline-dot"><i class="fa-solid fa-school"></i></div>
+          <div class="timeline-card glass">
+            <div class="timeline-header">
+              <span class="timeline-badge completed">✅ Completed Arc</span>
+              <span class="timeline-year">Until 2023</span>
+            </div>
+            <h3 class="timeline-title">Secondary School Education</h3>
+            <p class="timeline-institution"><i class="fa-solid fa-location-dot"></i> New Horizon Public School</p>
+            <p class="timeline-desc">Completed schooling at New Horizon Public School — the Origin Arc where I built the foundation in science, maths, and technology that lit the spark of engineering passion.</p>
+            <div class="timeline-tags">
+              <span class="tag">Science</span>
+              <span class="tag">Mathematics</span>
+              <span class="tag">Technology</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ANIME SHOWCASE ===== -->
+  <section class="section anime-section" id="anime">
+    <div class="section-inner">
+      <div class="section-header reveal-up">
+        <span class="section-tag">🔥 My Inspirations</span>
+        <h2 class="section-title">Favorite <span class="op-gradient">Anime</span></h2>
+        <div class="section-line"></div>
+        <p class="section-sub">These stories fuel my drive, my creativity, and my spirit every single day.</p>
+      </div>
+
+      <!-- ONE PIECE – FEATURED -->
+      <div class="anime-featured reveal-up delay-1">
+        <div class="anime-featured-img-wrap">
+          <img src="img_onepiece.png" alt="One Piece – Luffy" class="anime-featured-img"/>
+          <div class="anime-featured-glow"></div>
+          <div class="anime-rank">
+            <span class="rank-num">#1</span>
+            <span class="rank-title">THE GOAT</span>
+          </div>
+        </div>
+        <div class="anime-featured-info">
+          <div class="anime-series-tag op-tag">⚓ ONE PIECE — Main Theme</div>
+          <h3 class="anime-featured-title">Monkey D. Luffy</h3>
+          <p class="anime-featured-sub">The future King of the Pirates</p>
+          <p class="anime-featured-desc">
+            One Piece is the greatest adventure ever told. Luffy's unbreakable will, his love for his crew, and his refusal to give up no matter the odds — these principles inspire how I approach every challenge in life and engineering.
+          </p>
+          <div class="anime-traits">
+            <div class="trait-item"><span class="trait-icon">💪</span><span>Never Give Up</span></div>
+            <div class="trait-item"><span class="trait-icon">🤝</span><span>Loyalty</span></div>
+            <div class="trait-item"><span class="trait-icon">🌊</span><span>Freedom</span></div>
+            <div class="trait-item"><span class="trait-icon">👑</span><span>Ambition</span></div>
+          </div>
+          <div class="anime-quote-block">
+            <span class="aqb-icon">💬</span>
+            "The one who has the most freedom in this sea is the Pirate King!"
+            <span class="aqb-src">— Gol D. Roger</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- JJK & DEATH NOTE CARDS -->
+      <div class="anime-cards-row">
+        <!-- JJK -->
+        <div class="anime-card glass reveal-left delay-2">
+          <div class="anime-card-img-wrap">
+            <img src="img_jjk.png" alt="Jujutsu Kaisen – Gojo Satoru" class="anime-card-img"/>
+            <div class="anime-card-overlay jjk-overlay"></div>
+          </div>
+          <div class="anime-card-body">
+            <div class="anime-series-tag jjk-tag">⚡ JUJUTSU KAISEN</div>
+            <h3 class="anime-card-title">Gojo Satoru</h3>
+            <p class="anime-card-sub">The World's Strongest Sorcerer</p>
+            <p class="anime-card-desc">Gojo's mastery of Infinity and Six Eyes represents the pinnacle of potential — a reminder to push beyond limits in every field.</p>
+            <div class="anime-card-quote">"Throughout Heaven and Earth, I alone am the honored one."</div>
+          </div>
+        </div>
+
+        <!-- DEATH NOTE -->
+        <div class="anime-card glass reveal-right delay-3">
+          <div class="anime-card-img-wrap">
+            <img src="img_deathnote.png" alt="Death Note – Light Yagami" class="anime-card-img"/>
+            <div class="anime-card-overlay dn-overlay"></div>
+          </div>
+          <div class="anime-card-body">
+            <div class="anime-series-tag dn-tag">📓 DEATH NOTE</div>
+            <h3 class="anime-card-title">Light Yagami</h3>
+            <p class="anime-card-sub">The Genius Who Sought Justice</p>
+            <p class="anime-card-desc">Death Note's psychological depth and Light's razor-sharp intellect inspire a love for strategic thinking, problem solving, and staying ten steps ahead.</p>
+            <div class="anime-card-quote">"I'll take a potato chip... and eat it."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section section-dark" id="skills">
+    <div class="section-inner">
+      <div class="section-header reveal-up">
+        <span class="section-tag">⚔️ Devil Fruit Powers</span>
+        <h2 class="section-title">My <span class="op-gradient">Skills</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card glass reveal-up">
+          <div class="skill-icon-wrap"><i class="fa-solid fa-microchip"></i></div>
+          <h4>Digital Electronics</h4>
+          <p>Logic gates, circuit design, microcontrollers, and embedded systems.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-card glass reveal-up delay-1">
+          <div class="skill-icon-wrap"><i class="fa-brands fa-python"></i></div>
+          <h4>Programming</h4>
+          <p>Python and C for automation, scripting, and problem solving.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-card glass reveal-up delay-2">
+          <div class="skill-icon-wrap"><i class="fa-solid fa-code"></i></div>
+          <h4>Web Technologies</h4>
+          <p>HTML, CSS, and JavaScript for building interactive web pages.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+        </div>
+        <div class="skill-card glass reveal-up delay-3">
+          <div class="skill-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
+          <h4>Networking</h4>
+          <p>Computer networks, protocols, and communication systems.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+        </div>
+        <div class="skill-card glass reveal-up delay-4">
+          <div class="skill-icon-wrap"><i class="fa-solid fa-brain"></i></div>
+          <h4>Problem Solving</h4>
+          <p>Analytical thinking, logical reasoning, and systematic troubleshooting.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-card glass reveal-up delay-5">
+          <div class="skill-icon-wrap"><i class="fa-solid fa-users"></i></div>
+          <h4>Teamwork</h4>
+          <p>Strong collaboration for group projects — every Nakama matters.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <div class="section-header reveal-up">
+        <span class="section-tag">📡 Den Den Mushi</span>
+        <h2 class="section-title">Get In <span class="op-gradient">Touch</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-wrap">
+        <div class="contact-info reveal-left">
+          <h3>Join My Crew! 🏴‍☠️</h3>
+          <p>Whether you have a mission, a collab request, or just want to talk anime — I'm always ready to set sail with new nakama!</p>
+          <div class="contact-cards">
+            <a href="https://in.linkedin.com/in/atharva-bhosle-b17784359" target="_blank" rel="noopener" class="contact-card glass" id="contactLinkedin">
+              <div class="cc-icon linkedin-color"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="cc-info"><span class="cc-label">LinkedIn</span><span class="cc-value">Atharva Bhosle</span></div>
+              <i class="fa-solid fa-arrow-up-right-from-square cc-arrow"></i>
+            </a>
+            <a href="https://www.instagram.com/ath_rv008/" target="_blank" rel="noopener" class="contact-card glass" id="contactInstagram">
+              <div class="cc-icon insta-color"><i class="fa-brands fa-instagram"></i></div>
+              <div class="cc-info"><span class="cc-label">Instagram</span><span class="cc-value">@ath_rv008</span></div>
+              <i class="fa-solid fa-arrow-up-right-from-square cc-arrow"></i>
+            </a>
+          </div>
+          <div class="op-wanted-card reveal-up delay-2">
+            <div class="wanted-header">⚠ WANTED ⚠</div>
+            <div class="wanted-name">Atharva Bhosle</div>
+            <div class="wanted-reward">BOUNTY: ∞ Berry</div>
+            <div class="wanted-crime">Crime: Being too passionate about technology &amp; anime</div>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal-right delay-1">
+          <form class="contact-form glass" id="contactForm">
+            <h3>Send a Message 📩</h3>
+            <div class="form-group">
+              <label for="nameInput">Your Name</label>
+              <input type="text" id="nameInput" placeholder="What's your name, pirate?" required/>
+            </div>
+            <div class="form-group">
+              <label for="emailInput">Email Address</label>
+              <input type="email" id="emailInput" placeholder="your@email.com" required/>
+            </div>
+            <div class="form-group">
+              <label for="messageInput">Message</label>
+              <textarea id="messageInput" rows="4" placeholder="What's your adventure?…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width" id="sendBtn">
+              <span>Send Message</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Message received, Nakama! I'll reply soon! 🏴‍☠️</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-waves">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="rgba(255,120,0,0.08)"/></svg>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-logo"><span class="logo-anchor">⚓</span><span class="logo-text">AB</span></div>
+      <p class="footer-name">Atharva Bhosle</p>
+      <p class="footer-college">Vidyalankar Polytechnic College · Electronics &amp; Computer Engineering</p>
+      <p class="footer-anime-line">One Piece · Jujutsu Kaisen · Death Note</p>
+      <div class="footer-socials">
+        <a href="https://in.linkedin.com/in/atharva-bhosle-b17784359" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/ath_rv008/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <p class="footer-copy">&copy; 2024 Atharva Bhosle · Made with <span class="heart">♥</span>, Code &amp; Anime</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
