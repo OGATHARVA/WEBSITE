@@ -580,3 +580,55 @@ document.addEventListener('click', (e) => {
 const savedTheme = localStorage.getItem('portfolioTheme');
 if (savedTheme) setTheme(savedTheme);
 
+// ===================== CERTIFICATE LIGHTBOX =====================
+const certModal    = document.getElementById('certModal');
+const certModalImg = document.getElementById('certModalImg');
+const certModalErr = document.getElementById('certModalErr');
+
+function openCertModal(el) {
+  const src = el.getAttribute('data-cert') || el.closest('[data-cert]')?.getAttribute('data-cert');
+  if (!src) return;
+
+  // Reset state
+  certModalImg.classList.remove('hidden');
+  certModalErr.classList.remove('show');
+  certModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // Try loading certificate image
+  certModalImg.onload = () => {
+    certModalImg.classList.remove('hidden');
+    certModalErr.classList.remove('show');
+  };
+  certModalImg.onerror = () => {
+    // Image not found — show instructions
+    certModalImg.classList.add('hidden');
+    certModalErr.classList.add('show');
+
+    // Customize message with the expected filename
+    const fname = src.split('/').pop();
+    certModalErr.innerHTML = `
+      📁 <strong>Image not found</strong><br><br>
+      To show this certificate, save your image as:<br>
+      <code>${fname}</code><br><br>
+      inside the <code>certs/</code> folder in your <code>MY WEBSITE</code> folder,<br>
+      then refresh the page.
+    `;
+  };
+  certModalImg.src = src;
+}
+
+function closeCertModal(e) {
+  // Close only if clicking backdrop or close button (not the image itself)
+  if (e && e.target === certModalImg) return;
+  certModal.classList.remove('open');
+  document.body.style.overflow = '';
+  certModalImg.src = '';
+}
+
+// Close on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeCertModal();
+});
+
+
