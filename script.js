@@ -378,5 +378,205 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
-console.log('%c✨ Atharva Bhosle Portfolio', 'font-size:18px; font-weight:bold; background:linear-gradient(135deg,#8a5bff,#00d4ff); -webkit-background-clip:text; color:transparent;');
-console.log('%cBuilt with passion & code 🚀', 'color:#8a5bff; font-size:13px;');
+console.log('%c✨ Atharva Bhosle Portfolio', 'font-size:18px; font-weight:bold; background:linear-gradient(135deg,#ff7800,#ffd700); -webkit-background-clip:text; color:transparent;');
+console.log('%cBuilt with passion & code 🏴‍☠️', 'color:#ff7800; font-size:13px;');
+
+// ===================== GEAR CYCLE =====================
+const gearData = [
+  {
+    gear: 2,
+    src: 'img_gear2.png',
+    alt: 'Luffy Gear Second – Steam Mode',
+    badge1: '🔴 Steam Mode',
+    badge2: '⚡ Gear 2',
+    hint: 'Tap to advance!'
+  },
+  {
+    gear: 3,
+    src: 'img_gear3.png',
+    alt: 'Luffy Gear Third – Giant',
+    badge1: '💎 Gigant Mode',
+    badge2: '🦴 Gear 3',
+    hint: 'Keep going!'
+  },
+  {
+    gear: 4,
+    src: 'img_gear4.png',
+    alt: 'Luffy Gear Fourth – Boundman',
+    badge1: '⚫ Haki Coating',
+    badge2: '💥 Gear 4',
+    hint: 'Almost there!'
+  },
+  {
+    gear: 5,
+    src: 'img_onepiece.png',
+    alt: 'Luffy Gear Fifth – Sun God Nika',
+    badge1: '👒 Straw Hat Crew',
+    badge2: '🌟 Gear 5',
+    hint: '🌟 MAX POWER!'
+  }
+];
+
+let currentGear = 0; // start at Gear 2 (index 0)
+let gearHintHidden = false;
+
+const gearFrame = document.getElementById('gearFrame');
+const gearImg   = document.getElementById('gearImg');
+const gearBadge1 = document.getElementById('gearBadge1');
+const gearBadge2 = document.getElementById('gearBadge2');
+const gearBurst  = document.getElementById('gearBurst');
+const gearHint   = document.getElementById('gearHint');
+const gearSteps  = document.querySelectorAll('.gear-step');
+
+function applyGear(index) {
+  const data = gearData[index];
+
+  // Burst flash
+  gearBurst.classList.remove('boom');
+  void gearBurst.offsetWidth; // reflow
+  gearBurst.classList.add('boom');
+
+  // Fade out image
+  gearImg.classList.add('switching');
+
+  setTimeout(() => {
+    gearImg.src = data.src;
+    gearImg.alt = data.alt;
+    gearImg.classList.remove('switching');
+  }, 300);
+
+  // Update badges
+  gearBadge1.textContent = data.badge1;
+  gearBadge2.textContent = data.badge2;
+
+  // Update frame aura
+  gearFrame.setAttribute('data-gear', data.gear);
+
+  // Update progress dots
+  gearSteps.forEach((step, i) => {
+    step.classList.remove('active', 'done');
+    if (i < index)  step.classList.add('done');
+    if (i === index) step.classList.add('active');
+  });
+
+  // Update hint
+  if (!gearHintHidden) gearHint.textContent = `👆 ${data.hint}`;
+
+  // Gear 5 special: hide hint after a bit
+  if (data.gear === 5) {
+    setTimeout(() => {
+      gearHint.classList.add('hide');
+      gearHintHidden = true;
+    }, 2000);
+  }
+}
+
+// Initial setup
+if (gearFrame) {
+  gearFrame.setAttribute('data-gear', 2);
+  applyGear(0);
+
+  // Hide hint after 3 clicks
+  let tapCount = 0;
+  gearFrame.addEventListener('click', () => {
+    tapCount++;
+    if (tapCount >= 2) {
+      gearHint.classList.add('hide');
+      gearHintHidden = true;
+    }
+    currentGear = (currentGear + 1) % gearData.length;
+    applyGear(currentGear);
+  });
+
+  // Also allow clicking progress dots directly
+  gearSteps.forEach((step, i) => {
+    step.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentGear = i;
+      applyGear(currentGear);
+    });
+  });
+}
+
+// ===================== THEME SWITCHER =====================
+const themeToggleBtn = document.getElementById('themeToggleBtn');
+const themePanel     = document.getElementById('themePanel');
+const themeBtns      = document.querySelectorAll('.theme-btn');
+
+// Color palettes for particles per theme
+const themeParticleColors = {
+  onepiece:  [(0.45, [255,120,0]), (0.75, [255,215,0]), (1, [26,100,180])],
+  jjk:       [(0.45, [168,85,247]), (0.75, [0,229,255]), (1, [255,0,122])],
+  deathnote: [(0.55, [200,0,0]),   (0.8,  [180,0,0]),   (1, [120,0,0])]
+};
+
+function getParticleColorForTheme(theme, opacity) {
+  const r = Math.random();
+  if (theme === 'jjk') {
+    if (r < 0.45) return `rgba(168,85,247,${opacity})`;
+    if (r < 0.75) return `rgba(0,229,255,${opacity * 0.8})`;
+    return `rgba(255,0,122,${opacity})`;
+  }
+  if (theme === 'deathnote') {
+    if (r < 0.55) return `rgba(200,0,0,${opacity})`;
+    if (r < 0.80) return `rgba(255,80,80,${opacity * 0.8})`;
+    return `rgba(80,0,0,${opacity})`;
+  }
+  // onepiece (default)
+  if (r < 0.45) return `rgba(255,120,0,${opacity})`;
+  if (r < 0.75) return `rgba(255,215,0,${opacity * 0.7})`;
+  return `rgba(26,100,180,${opacity})`;
+}
+
+function refreshParticleColors(theme) {
+  particles.forEach(p => {
+    p.color = getParticleColorForTheme(theme, p.opacity);
+  });
+}
+
+function setTheme(theme) {
+  // Apply theme to body
+  document.body.setAttribute('data-theme', theme);
+
+  // Update active button
+  themeBtns.forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
+  });
+
+  // Refresh particle colors
+  refreshParticleColors(theme);
+
+  // Save preference
+  localStorage.setItem('portfolioTheme', theme);
+
+  // Close panel
+  themePanel.classList.remove('open');
+  themeToggleBtn.classList.remove('open');
+}
+
+// Toggle panel open/close
+themeToggleBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  themePanel.classList.toggle('open');
+  themeToggleBtn.classList.toggle('open');
+});
+
+// Handle theme button clicks
+themeBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    setTheme(btn.getAttribute('data-theme'));
+  });
+});
+
+// Close panel when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.theme-switcher')) {
+    themePanel.classList.remove('open');
+    themeToggleBtn.classList.remove('open');
+  }
+});
+
+// Restore saved theme on load
+const savedTheme = localStorage.getItem('portfolioTheme');
+if (savedTheme) setTheme(savedTheme);
+

@@ -103,14 +103,22 @@
       </div>
     </div>
 
-    <!-- Right – Luffy image -->
+    <!-- Right – Luffy Gear Cycle -->
     <div class="hero-visual reveal-right delay-2">
-      <div class="hero-img-frame">
-        <img src="img_onepiece.png" alt="Monkey D. Luffy – One Piece" class="hero-anime-img"/>
+      <div class="hero-img-frame" id="gearFrame" title="Tap to power up!">
+        <div class="gear-tap-hint" id="gearHint">👆 Tap to Power Up!</div>
+        <img src="img_gear2.png" alt="Luffy Gear 2" class="hero-anime-img gear-img" id="gearImg"/>
         <div class="img-glow"></div>
-        <div class="img-badge ib1">👒 Straw Hat Crew</div>
-        <div class="img-badge ib2">⚡ Gear 5</div>
-        <div class="devil-fruit-orb"></div>
+        <div class="img-badge ib1" id="gearBadge1">🔴 Steam Mode</div>
+        <div class="img-badge ib2" id="gearBadge2">⚡ Gear 2</div>
+        <div class="devil-fruit-orb" id="devilOrb"></div>
+        <div class="gear-power-burst" id="gearBurst"></div>
+        <div class="gear-progress-wrap" id="gearProgress">
+          <div class="gear-step active" data-gear="2">G2</div>
+          <div class="gear-step" data-gear="3">G3</div>
+          <div class="gear-step" data-gear="4">G4</div>
+          <div class="gear-step" data-gear="5">G5</div>
+        </div>
       </div>
     </div>
 
@@ -418,6 +426,31 @@
       <p class="footer-copy">&copy; 2024 Atharva Bhosle · Made with <span class="heart">♥</span>, Code &amp; Anime</p>
     </div>
   </footer>
+
+  <!-- ===== THEME SWITCHER ===== -->
+  <div class="theme-switcher" id="themeSwitcher">
+    <button class="theme-toggle-btn" id="themeToggleBtn" title="Switch Theme">
+      <span class="theme-toggle-icon">🎨</span>
+    </button>
+    <div class="theme-panel" id="themePanel">
+      <div class="theme-panel-title">Choose Theme</div>
+      <button class="theme-btn active" data-theme="onepiece">
+        <span class="theme-btn-icon">⚓</span>
+        <span class="theme-btn-name">One Piece</span>
+        <span class="theme-btn-sub">Orange · Gold · Navy</span>
+      </button>
+      <button class="theme-btn" data-theme="jjk">
+        <span class="theme-btn-icon">⚡</span>
+        <span class="theme-btn-name">Jujutsu Kaisen</span>
+        <span class="theme-btn-sub">Purple · Cyan · Dark</span>
+      </button>
+      <button class="theme-btn" data-theme="deathnote">
+        <span class="theme-btn-icon">📓</span>
+        <span class="theme-btn-name">Death Note</span>
+        <span class="theme-btn-sub">Red · Black · Cream</span>
+      </button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
