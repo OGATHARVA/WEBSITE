@@ -37,13 +37,13 @@
       <span class="logo-text">AB</span>
     </div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home"      class="nav-link" data-section="home">Home</a></li>
-      <li><a href="#about"     class="nav-link" data-section="about">About</a></li>
-      <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+      <li><a href="#home"         class="nav-link" data-section="home">Home</a></li>
+      <li><a href="#about"        class="nav-link" data-section="about">About</a></li>
+      <li><a href="#education"    class="nav-link" data-section="education">Education</a></li>
       <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
-      <li><a href="#anime"     class="nav-link" data-section="anime">Anime</a></li>
-      <li><a href="#skills"    class="nav-link" data-section="skills">Skills</a></li>
-      <li><a href="#contact"   class="nav-link" data-section="contact">Contact</a></li>
+      <li><a href="#anime"        class="nav-link" data-section="anime">Anime</a></li>
+      <li><a href="#skills"       class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#contact"      class="nav-link" data-section="contact">Contact</a></li>
     </ul>
     <div class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
@@ -52,7 +52,6 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="home">
-    <!-- OP wave decoration -->
     <div class="hero-ocean">
       <svg class="wave wave1" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C360,120 1080,0 1440,64 L1440,120 L0,120 Z"/></svg>
       <svg class="wave wave2" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,80 C400,20 1040,100 1440,40 L1440,120 L0,120 Z"/></svg>
@@ -63,7 +62,6 @@
       <div class="orb orb3"></div>
     </div>
 
-    <!-- Left content -->
     <div class="hero-content">
       <div class="hero-badge reveal-up">
         <span class="badge-icon">🏴‍☠️</span> Nakama of the Grand Line
@@ -167,7 +165,7 @@
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-num" data-target="5">0</span><span class="stat-suffix">+</span>
-          <span class="stat-label">Technologies</span>
+          <span class="stat-label">Certificates</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
@@ -226,7 +224,7 @@
   </section>
 
   <!-- ===== ACHIEVEMENTS ===== -->
-  <section class="section section-dark" id="achievements">
+  <section class="section" id="achievements">
     <div class="section-inner">
       <div class="section-header reveal-up">
         <span class="section-tag">🏆 Power Level</span>
@@ -240,7 +238,7 @@
         <div class="ach-featured-badge">🏆 #1 WINNER</div>
         <div class="ach-featured-left">
           <div class="ach-cert-thumb" data-cert="certs/cert_hackathon.jpg" onclick="openCertModal(this)">
-            <div class="ach-cert-thumb-img" style="background: linear-gradient(135deg, #1a1a00, #4a3800);">
+            <div class="ach-cert-thumb-img" style="background:linear-gradient(135deg,#1a1a00,#4a3800);">
               <span class="ach-cert-icon">🥇</span>
             </div>
             <div class="ach-cert-thumb-hover"><i class="fa-solid fa-expand"></i> View</div>
@@ -251,7 +249,7 @@
           <h3 class="ach-featured-title">Industry Hackathon 2025 — <span class="op-gradient">WINNER</span></h3>
           <p class="ach-featured-sub">Team Elite · 28th &amp; 29th March 2025</p>
           <p class="ach-featured-desc">
-            Secured <strong>1st Place</strong> at the prestigious <strong>Industry Hackathon 2025</strong> organized by Vidyalankar Polytechnic, demonstrating outstanding skills and innovation. Partnered with industry giants <em>Amdocs, Ayritech, Codeterna</em> as sponsors. Signed by Principal Dr. Ashish Ukidve.
+            Secured <strong>1st Place</strong> at the prestigious <strong>Industry Hackathon 2025</strong> organized by Vidyalankar Polytechnic, demonstrating outstanding skills and innovation. Industry partners: <em>Amdocs, Ayritech, Codeterna</em>. Signed by Principal Dr. Ashish Ukidve.
           </p>
           <div class="ach-chips">
             <span class="ach-chip gold">🥇 1st Place</span>
@@ -264,33 +262,32 @@
 
       <!-- CERT GRID -->
       <div class="ach-grid">
-
         <!-- AI Internship -->
         <div class="ach-card glass reveal-up delay-1">
           <div class="ach-card-header">
-            <div class="ach-card-icon" style="background: linear-gradient(135deg,rgba(0,180,180,0.2),rgba(0,120,200,0.2)); border-color: rgba(0,180,180,0.4);">🤖</div>
+            <div class="ach-card-icon" style="background:linear-gradient(135deg,rgba(0,180,180,.2),rgba(0,120,200,.2));border-color:rgba(0,180,180,.4);">🤖</div>
             <div class="ach-org-tag">Vidhyashala · upGrad</div>
           </div>
           <h4 class="ach-card-title">Certificate of Internship</h4>
           <p class="ach-card-field">Artificial Intelligence Internship</p>
           <p class="ach-card-date">📅 05 Jun 2025 – 05 Sep 2025</p>
-          <p class="ach-card-desc">Completed a 3-month AI internship, recognized as dedicated, hardworking &amp; intelligent. Cert No: VID24653</p>
-          <button class="ach-view-btn" onclick="openCertModal(this)" data-cert="certs/cert_internship.jpg">
+          <p class="ach-card-desc">Completed a 3-month AI internship at DVVS EduTech. Recognized as dedicated, hardworking &amp; intelligent. Cert No: VID24653</p>
+          <button class="ach-view-btn" data-cert="certs/cert_internship.jpg" onclick="openCertModal(this)">
             <i class="fa-solid fa-certificate"></i> View Certificate
           </button>
         </div>
 
-        <!-- Excellence Performance -->
+        <!-- Excellence -->
         <div class="ach-card glass reveal-up delay-2">
           <div class="ach-card-header">
-            <div class="ach-card-icon" style="background: linear-gradient(135deg,rgba(0,200,180,0.2),rgba(0,160,200,0.2)); border-color: rgba(0,200,180,0.4);">🏅</div>
+            <div class="ach-card-icon" style="background:linear-gradient(135deg,rgba(0,200,180,.2),rgba(0,160,200,.2));border-color:rgba(0,200,180,.4);">🏅</div>
             <div class="ach-org-tag">DVVS EduTech Pvt. Ltd.</div>
           </div>
           <h4 class="ach-card-title">Certificate of Excellence</h4>
           <p class="ach-card-field">Outstanding AI Intern Performance</p>
           <p class="ach-card-date">📅 05 Jun 2025 – 05 Sep 2025</p>
           <p class="ach-card-desc">Awarded for exemplary performance, dedication &amp; diligence as an Artificial Intelligence intern. Cert No: VID24653</p>
-          <button class="ach-view-btn" onclick="openCertModal(this)" data-cert="certs/cert_excellence.jpg">
+          <button class="ach-view-btn" data-cert="certs/cert_excellence.jpg" onclick="openCertModal(this)">
             <i class="fa-solid fa-certificate"></i> View Certificate
           </button>
         </div>
@@ -298,14 +295,14 @@
         <!-- Course Completion AI -->
         <div class="ach-card glass reveal-up delay-3">
           <div class="ach-card-header">
-            <div class="ach-card-icon" style="background: linear-gradient(135deg,rgba(0,160,200,0.2),rgba(0,100,180,0.2)); border-color: rgba(0,160,200,0.4);">📜</div>
+            <div class="ach-card-icon" style="background:linear-gradient(135deg,rgba(0,160,200,.2),rgba(0,100,180,.2));border-color:rgba(0,160,200,.4);">📜</div>
             <div class="ach-org-tag">Vidhyashala · MSME · AICTE</div>
           </div>
-          <h4 class="ach-card-title">Course Completion Certificate</h4>
+          <h4 class="ach-card-title">Course Completion — AI</h4>
           <p class="ach-card-field">Artificial Intelligence Training</p>
           <p class="ach-card-date">📅 05 Jun 2025 – 05 Sep 2025</p>
-          <p class="ach-card-desc">Completed AI training program recognized by Ministry of MSME, Govt. of India &amp; AICTE. Cert No: VID24653</p>
-          <button class="ach-view-btn" onclick="openCertModal(this)" data-cert="certs/cert_course.jpg">
+          <p class="ach-card-desc">Completed AI training recognized by Ministry of MSME, Govt. of India &amp; AICTE. Cert No: VID24653</p>
+          <button class="ach-view-btn" data-cert="certs/cert_course.jpg" onclick="openCertModal(this)">
             <i class="fa-solid fa-certificate"></i> View Certificate
           </button>
         </div>
@@ -313,30 +310,27 @@
         <!-- Infosys Python -->
         <div class="ach-card glass reveal-up delay-4">
           <div class="ach-card-header">
-            <div class="ach-card-icon" style="background: linear-gradient(135deg,rgba(0,120,200,0.2),rgba(50,60,200,0.2)); border-color: rgba(0,120,200,0.4);">🐍</div>
+            <div class="ach-card-icon" style="background:linear-gradient(135deg,rgba(0,120,200,.2),rgba(50,60,200,.2));border-color:rgba(0,120,200,.4);">🐍</div>
             <div class="ach-org-tag">Infosys Springboard</div>
           </div>
           <h4 class="ach-card-title">Python Fundamentals</h4>
           <p class="ach-card-field">Course Completion Certificate</p>
           <p class="ach-card-date">📅 February 13, 2026</p>
-          <p class="ach-card-desc">Successfully completed Python Fundamentals on Infosys Springboard platform. Issued Feb 16, 2026.</p>
-          <button class="ach-view-btn" onclick="openCertModal(this)" data-cert="certs/cert_python.jpg">
+          <p class="ach-card-desc">Successfully completed Python Fundamentals on Infosys Springboard. Issued Feb 16, 2026 by SVP Satheesha B. Nanjappa.</p>
+          <button class="ach-view-btn" data-cert="certs/cert_python.jpg" onclick="openCertModal(this)">
             <i class="fa-solid fa-certificate"></i> View Certificate
           </button>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ===== CERT LIGHTBOX MODAL ===== -->
-  <div class="cert-modal" id="certModal" onclick="closeCertModal(event)">
-    <div class="cert-modal-box">
+  <div class="cert-modal" id="certModal">
+    <div class="cert-modal-box" onclick="event.stopPropagation()">
       <button class="cert-modal-close" onclick="closeCertModal()">&times;</button>
       <img class="cert-modal-img" id="certModalImg" src="" alt="Certificate"/>
-      <div class="cert-modal-err" id="certModalErr">
-        📁 Place your certificate image in the <code>certs/</code> folder inside <code>MY WEBSITE</code>.
-      </div>
+      <div class="cert-modal-err" id="certModalErr"></div>
     </div>
   </div>
 
@@ -383,7 +377,6 @@
 
       <!-- JJK & DEATH NOTE CARDS -->
       <div class="anime-cards-row">
-        <!-- JJK -->
         <div class="anime-card glass reveal-left delay-2">
           <div class="anime-card-img-wrap">
             <img src="img_jjk.png" alt="Jujutsu Kaisen – Gojo Satoru" class="anime-card-img"/>
@@ -398,7 +391,6 @@
           </div>
         </div>
 
-        <!-- DEATH NOTE -->
         <div class="anime-card glass reveal-right delay-3">
           <div class="anime-card-img-wrap">
             <img src="img_deathnote.png" alt="Death Note – Light Yagami" class="anime-card-img"/>
@@ -539,7 +531,7 @@
         <a href="https://in.linkedin.com/in/atharva-bhosle-b17784359" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://www.instagram.com/ath_rv008/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
-      <p class="footer-copy">&copy; 2024 Atharva Bhosle · Made with <span class="heart">♥</span>, Code &amp; Anime</p>
+      <p class="footer-copy">&copy; 2025 Atharva Bhosle · Made with <span class="heart">♥</span>, Code &amp; Anime</p>
     </div>
   </footer>
 
